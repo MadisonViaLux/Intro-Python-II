@@ -47,8 +47,7 @@ player = Player(username, room['outside'])
 
 print('pressing "q" will quit the game bro')
 
-print(
-    f"\nYour name is {player.name}, and you are\n currently {player.current_room.r_name}.\n {player.current_room.description}\n")
+print(f"\nYour name is {player.name}, and you are\n currently {player.current_room.r_name}.\n {player.current_room.description}\n")
 
 # Write a loop that:
 #
