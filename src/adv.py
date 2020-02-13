@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -38,6 +38,48 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+player = Player(input("What be your name lad..? "), room['outside'])
+
+print(f"Hello, {player.name} \n\nYou are currently {player.current_room}")
+
+while True:
+    # print(player.current_room)
+    cmd = input("-> ").lower()
+    if cmd in ["n", "s", "e", "w"]:
+        player.travel(cmd)
+    elif cmd == "q":
+        print("Goodbye!")
+        exit()
+    else:
+        print("that's- Not part of the game... n, e, s, w ")
+
+
+
+# player = Player(input("yo name son "), room['outside'])
+#
+# print(f"Hello, {player.name} \n\n{player.current_room}")
+#
+# while True:
+#     print(player.current_room)
+#     cmd = input("-> ").lower()
+#     if cmd in ["n", "s", "e", "w"]:
+#         print("MOVE " + cmd)
+#         current_room = player.current_room
+#         if cmd == "n":
+#             if player.current_room.n_to is not None:
+#                 player.current_room = player.current_room.n_to
+#         if cmd == "e":
+#             if player.current_room.n_to is not None:
+#                 player.current_room = player.current_room.e_to
+#         if cmd == "s":
+#             if player.current_room.n_to is not None:
+#                 player.current_room = player.current_room.s_to
+#         if cmd == "w":
+#             if player.current_room.n_to is not None:
+#                 player.current_room = player.current_room.w_to
+#     elif cmd == "q":
+#         print("Goodbye!")
+#         exit()
 
 # Write a loop that:
 #
