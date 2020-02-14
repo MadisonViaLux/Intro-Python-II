@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 # Declare all the rooms
 
 room = {
@@ -47,6 +48,8 @@ while True:
     cmd = input("-> ").lower()
     if cmd in ["n", "s", "e", "w"]:
         player.travel(cmd)
+        if player.current_room == "overlook":
+            item = Item("Cheese", "This is where the fun begins")
     elif cmd == "q":
         print("Goodbye!")
         exit()
